@@ -62,7 +62,7 @@
 }
 .nav-menu {
     visibility: hidden;
-    background-color: chocolate;
+    background: linear-gradient(to bottom right,rgba(73, 35, 180, 1),rgba(232, 120, 207, 1) );
     list-style-type: none;
     position: fixed;
     padding: 1.5rem;
@@ -94,11 +94,13 @@
     opacity: 0.8;
     padding: 10px;
     transition: 0.3s;
+    line-height: 1;
 }
 
 .nav-menu li a:hover {
     color: #ff6600;
     opacity: 1;
+    white-space: nowrap;
 }
 
 .dropdown-menu {
@@ -182,7 +184,6 @@
 
 .courses a:hover,
 .prices a:hover {
-    transform: scale(1.1);
     transition: 0.3s;
     color: #ffffff;
 }
@@ -251,7 +252,7 @@
     }
     .nav-menu {
         visibility: hidden;
-        background-color: chocolate;
+        background: linear-gradient(to bottom right,rgba(73, 35, 180, 1),rgba(232, 120, 207, 1) );
         list-style-type: none;
         position: fixed;
         padding: 1.5rem;
@@ -344,7 +345,7 @@
         justify-content: center;
         gap: 40px;
         list-style: none;
-        background-color: rgba(210, 105, 30, 0);
+        background: transparent;
         align-items: center;
         flex-direction: row;
         top: -50px;
@@ -355,13 +356,13 @@
 @media screen and (min-width: 1920px){
     .nav-menu {
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
         gap: 40px;
         list-style: none;
         background-color: rgba(210, 105, 30, 0);
         align-items: center;
         flex-direction: row;
-        top: -50px;
+        top: -40px;
         position: relative;
         margin-left: 524px;
     }
