@@ -23,7 +23,9 @@
     display: flex;
     align-items: center;
     margin-left: auto;
-    margin-right: 60px;
+    margin-right: 80px;
+    gap: 20px;
+    padding-top: 10px;
 }
 
 .profile_basket img {
@@ -170,6 +172,7 @@
     width: 40px;
     height: auto;
     padding-left: 25px;
+    padding-top: 10px;
 }
 
 .courses a,
@@ -211,12 +214,13 @@
         display: flex;
         align-items: center;
         margin-left: auto;
-        margin-right: 60px;
+        margin-right: 80px;
         gap: 20px;
     }
 
     .profile_basket img {
         width: 50px;
+        padding-top: -10px;
         height: auto;
         display: block;
         filter: brightness(0) invert(1);
