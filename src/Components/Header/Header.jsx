@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Hamburger from "hamburger-react";
 import "./Header.css";
 import logo from "/logo.png";
@@ -7,10 +8,9 @@ import basket from "/basket.svg";
 
 export default function Header() {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    const [isPricesOpen, setIsPricesOpen] = useState(false);
     const [hoveredIndex, setHoveredIndex] = useState(null);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [WindowWidth, setWindowWidth] = useState(window.innerWidth);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
     useEffect(() => {
         const handleResize = () => {
@@ -18,9 +18,7 @@ export default function Header() {
         };
 
         window.addEventListener("resize", handleResize);
-        return () => {
-            window.removeEventListener("resize", handleResize);
-        };
+        return () => window.removeEventListener("resize", handleResize);
     }, []);
 
     const menuItems = ["Contact Us"];
@@ -29,18 +27,25 @@ export default function Header() {
         <header className="header">
             <nav className="navbar">
                 <div className="container">
-                    <a href="#" onClick={() => window.location.reload()}>
-                        <img src={logo} alt="logo" className="logo"/>
-                    </a>
-                    {WindowWidth < 1024 && (
-                        <button className="nav-menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-                            <Hamburger size={36} color="white"/>
+                    <Link to="/">
+                        <img src={logo} alt="logo" className="logo" />
+                    </Link>
+
+                    {windowWidth < 1024 && (
+                        <button
+                            className="nav-menu-toggle"
+                            onClick={() => setIsMenuOpen(!isMenuOpen)}
+                        >
+                            <Hamburger size={36} color="white" toggled={isMenuOpen} />
                         </button>
                     )}
 
-                    <ul className={`nav-menu ${isMenuOpen || WindowWidth >= 1024 ? "open" : ""}`}>
-                        <li className="dropdown" onMouseEnter={() => setIsDropdownOpen(true)}
-                            onMouseLeave={() => setIsDropdownOpen(false)}>
+                    <ul className={`nav-menu ${isMenuOpen || windowWidth >= 1024 ? "open" : ""}`}>
+                        <li
+                            className="dropdown"
+                            onMouseEnter={() => setIsDropdownOpen(true)}
+                            onMouseLeave={() => setIsDropdownOpen(false)}
+                        >
                             <a href="#">Courses ▼</a>
                             {isDropdownOpen && (
                                 <div className="dropdown-menu">
@@ -67,43 +72,28 @@ export default function Header() {
                                 </div>
                             )}
                         </li>
-                        <li className="dropdown" onMouseEnter={() => setIsPricesOpen(true)}
-                            onMouseLeave={() => setIsPricesOpen(false)}>
-                            <a href="#">Prices ▼</a>
-                            {isPricesOpen && (
-                                <div className="dropdown-menu-prices">
-                                    <div className="dropdown-column">
-                                        <a href="#">For Individuals</a>
-                                        <a href="#">For Students</a>
-                                        <a href="#">For Business</a>
-                                    </div>
-                                </div>
-                            )}
-                        </li>
                         {menuItems.map((item, index) => (
                             <li key={index} className="contact">
-                                <a href="#"
-                                   onMouseEnter={() => setHoveredIndex(index)}
-                                   onMouseLeave={() => setHoveredIndex(null)}
-                                   style={{
-                                       fontSize: hoveredIndex === index ? "1.2rem" : "1rem",
-                                       transform: hoveredIndex === index ? "scale(1.1)" : "scale(1)",
-                                       transition: "all 0.3s",
-                                       display: "flex",
-                                       alignItems: "center",
-                                       justifyContent: "center",
-                                   }}>
+                                <a
+                                    href="#"
+                                    onMouseEnter={() => setHoveredIndex(index)}
+                                    onMouseLeave={() => setHoveredIndex(null)}
+                                    className={`nav-hover-link ${hoveredIndex === index ? "hovered" : ""}`}
+                                >
                                     {item}
                                 </a>
                             </li>
                         ))}
                     </ul>
                 </div>
-                <div className={`profile_basket ${isMenuOpen ? 'hide' : ''}`}>
-                    <a href="/Registration.jsx">
-                        <img src={profilePic} alt="profile"/>
-                    </a>
-                    <a href="#"> <img src={basket} alt="basket"/></a>
+
+                <div className={`profile_basket ${isMenuOpen ? "hide" : ""}`}>
+                    <Link to="/registration">
+                        <img src={profilePic} alt="profile" />
+                    </Link>
+                    <Link to="/cart">
+                        <img src={basket} alt="basket" />
+                    </Link>
                 </div>
             </nav>
         </header>
