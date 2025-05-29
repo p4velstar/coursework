@@ -7,7 +7,6 @@ import profilePic from "/user.svg";
 import basket from "/basket.svg";
 
 export default function Header() {
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [hoveredIndex, setHoveredIndex] = useState(null);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -41,37 +40,7 @@ export default function Header() {
                     )}
 
                     <ul className={`nav-menu ${isMenuOpen || windowWidth >= 1024 ? "open" : ""}`}>
-                        <li
-                            className="dropdown"
-                            onMouseEnter={() => setIsDropdownOpen(true)}
-                            onMouseLeave={() => setIsDropdownOpen(false)}
-                        >
-                            <a href="#">Courses ▼</a>
-                            {isDropdownOpen && (
-                                <div className="dropdown-menu">
-                                    <div className="dropdown-column">
-                                        <h3>Popular topics</h3>
-                                        <a href="#">Python</a>
-                                        <a href="#">JavaScript</a>
-                                        <a href="#">HTML & CSS</a>
-                                        <a href="#">SQL</a>
-                                    </div>
-                                    <div className="dropdown-column">
-                                        <h3>Languages</h3>
-                                        <a href="#">Java</a>
-                                        <a href="#">C++</a>
-                                        <a href="#">C#</a>
-                                        <a href="#">PHP</a>
-                                    </div>
-                                    <div className="dropdown-column">
-                                        <h3>Careers</h3>
-                                        <a href="#">Full-Stack Engineer</a>
-                                        <a href="#">Front-End Engineer</a>
-                                        <a href="#">Data Scientist</a>
-                                    </div>
-                                </div>
-                            )}
-                        </li>
+                            <Link to={"/"} className="courses">Courses</Link>
                         {menuItems.map((item, index) => (
                             <li key={index} className="contact">
                                 <a
@@ -88,7 +57,9 @@ export default function Header() {
                 </div>
 
                 <div className={`profile_basket ${isMenuOpen ? "hide" : ""}`}>
-                    <Link to="/registration">
+                    <Link to="/login" className="header-login-link">Login</Link>
+                    <Link to="/registration" className="header-registration-link">Registration</Link>
+                    <Link to="/">
                         <img src={profilePic} alt="profile" />
                     </Link>
                     <Link to="/cart">

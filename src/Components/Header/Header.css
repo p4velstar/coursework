@@ -26,6 +26,21 @@
     padding-top: 10px;
 }
 
+.profile_basket a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    padding: 4px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, filter 0.3s ease;
+}
+
+.profile_basket a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
 .profile_basket img {
     width: 40px;
     height: auto;
@@ -34,12 +49,41 @@
     transition: filter 0.3s ease-in-out;
 }
 
-.profile_basket img:hover {
-    filter: invert(64%) sepia(93%) saturate(749%) hue-rotate(2deg) brightness(90%) contrast(110%);
+.profile_basket a:hover img {
+    filter: invert(87%) sepia(22%) saturate(7471%) hue-rotate(286deg) brightness(102%) contrast(101%);
 }
 
 .profile_basket.hide {
     display: none;
+}
+
+.header-login-link,
+.header-registration-link,
+.nav-menu li a,
+.nav-hover-link,
+.courses {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 4px;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 500;
+    user-select: none;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    white-space: nowrap;
+}
+
+.header-login-link:hover,
+.header-registration-link:hover,
+.nav-menu li a:hover,
+.nav-hover-link:hover,
+.courses:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffccff;
 }
 
 .nav-menu-toggle {
@@ -60,7 +104,7 @@
 .nav-menu {
     visibility: hidden;
     background: linear-gradient(to bottom right, rgba(73, 35, 180, 1), rgba(232, 120, 207, 1));
-    list-style-type: none;
+    list-style: none;
     position: fixed;
     inset: 0;
     margin: 0;
@@ -88,77 +132,6 @@
     position: relative;
 }
 
-.nav-menu li a {
-    text-decoration: none;
-    color: #ffffff;
-    opacity: 0.8;
-    padding: 10px;
-    transition: color 0.3s, opacity 0.3s;
-    font-size: 1rem;
-    font-weight: 400;
-    white-space: nowrap;
-}
-
-.nav-menu li a:hover {
-    color: #ff6600;
-    opacity: 1;
-}
-
-.dropdown {
-    position: relative;
-    width: 120px;
-}
-
-.dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #1f1f1f;
-    display: flex;
-    gap: 20px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
-    z-index: 100;
-    width: max-content;
-    max-width: 90vw;
-}
-
-.dropdown:hover .dropdown-menu,
-.dropdown:hover {
-    opacity: 1;
-    visibility: visible;
-}
-
-.dropdown-column {
-    display: flex;
-    flex-direction: column;
-    min-width: 150px;
-}
-
-.dropdown-column h3 {
-    font-size: 14px;
-    margin-bottom: 10px;
-    color: #ffffff;
-}
-
-.dropdown-column a {
-    text-decoration: none;
-    color: #cccccc;
-    font-size: 14px;
-    font-weight: 400;
-    padding: 5px 0;
-    transition: color 0.3s ease, transform 0.2s ease;
-    white-space: nowrap;
-}
-
-.dropdown-column a:hover {
-    color: #ff6600;
-}
-
 .logo {
     width: 40px;
     height: auto;
@@ -166,61 +139,10 @@
     padding-top: 10px;
 }
 
-.nav-hover-link {
-    display: inline-block;
-    width: 120px;
-    text-align: center;
-    color: #ffffff;
-    opacity: 0.8;
-    padding: 10px;
-    transition: transform 0.3s ease, opacity 0.3s ease, color 0.3s ease;
-    will-change: transform;
-    text-decoration: none;
-}
-
 .nav-hover-link.hovered {
     opacity: 1;
-    color: #ff6600;
-}
-
-.courses a {
-    padding: 10px 20px;
-    color: #ffffff;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.courses a:hover {
-    transition: 0.3s;
-    color: #ffffff;
-}
-
-@media screen and (max-width: 1023px) {
-    .nav-menu {
-        background-color: chocolate;
-    }
-
-    .nav-menu-toggle {
-        display: block;
-    }
-
-    .dropdown-menu {
-        position: static;
-        opacity: 1 !important;
-        visibility: visible !important;
-        transform: none !important;
-        box-shadow: none;
-        background: none;
-        padding: 0;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .dropdown-column {
-        padding: 0 15px;
-    }
+    color: #ffccff;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 @media screen and (min-width: 1024px) {
@@ -240,11 +162,9 @@
         position: relative;
         margin-left: 200px;
     }
+
     .logo {
         width: 150px;
-        height: auto;
-        padding-left: 25px;
-        padding-top: 10px;
     }
 }
 
