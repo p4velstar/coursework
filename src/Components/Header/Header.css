@@ -95,8 +95,10 @@
     color: #ffffff;
     opacity: 0.8;
     padding: 10px;
-    transition: 0.3s;
+    transition: color 0.3s, opacity 0.3s;
     line-height: 1;
+    font-size: 1rem;
+    font-weight: 400;
 }
 
 .nav-menu li a:hover {
@@ -161,7 +163,25 @@
     display: block;
     text-decoration: none;
     color: #000;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.5;.nav-menu li a {
+    text-decoration: none;
+    color: #ffffff;
+    opacity: 0.8;
+    padding: 10px;
+    transition: color 0.3s, opacity 0.3s;
+    line-height: 1;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.nav-menu li a:hover {
+    color: #ff6600;
+    opacity: 1;
+}
     padding: 5px 0;
+    transition: color 0.3s;
 }
 
 .dropdown-column a:hover {
@@ -338,9 +358,6 @@
 }
 
 @media screen and (min-width: 1024px) {
-
-
-
     .nav-menu-toggle {
         display: none;
     }

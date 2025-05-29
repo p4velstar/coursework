@@ -100,7 +100,7 @@ export default function Header() {
                     </ul>
                 </div>
                 <div className={`profile_basket ${isMenuOpen ? 'hide' : ''}`}>
-                    <a href="#">
+                    <a href="/Registration.jsx">
                         <img src={profilePic} alt="profile"/>
                     </a>
                     <a href="#"> <img src={basket} alt="basket"/></a>
