@@ -40,7 +40,7 @@ export default function Header() {
                     )}
 
                     <ul className={`nav-menu ${isMenuOpen || windowWidth >= 1024 ? "open" : ""}`}>
-                            <Link to={"/"} className="courses">Courses</Link>
+                            <Link to={"/courses"} className="courses">Courses</Link>
                         {menuItems.map((item, index) => (
                             <li key={index} className="contact">
                                 <a

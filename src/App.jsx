@@ -3,6 +3,7 @@ import HomeMain from "./Components/HomeMain/HomeMain.jsx";
 import Header from "./Components/Header/Header.jsx";
 import Registration from "./Components/Registration/Registration.jsx";
 import Login from "./Components/Login/Login.jsx";
+import Courses from "./Components/Courses/Courses.jsx";
 import Cart from "./Components/Cart/Cart.jsx";
 
 export default function App() {
@@ -13,6 +14,7 @@ export default function App() {
                 <Route path="/" element={<HomeMain />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/registration" element={<Registration />} />
+                <Route path="/courses" element={<Courses  />} />
                 <Route path="/cart" element={<Cart />} />
             </Routes>
             <Registration />
