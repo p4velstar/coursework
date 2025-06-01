@@ -5,6 +5,7 @@ const Checkout = ({ orders, onConfirm }) => {
     const totalPrice = orders.reduce((sum, order) => sum + order.price * order.quantity, 0);
 
     return (
+        <div className="checkout-wrapper">
         <div className="checkout-container">
             <h2>Оформлення замовлення</h2>
             {orders.length === 0 ? (
@@ -28,6 +29,7 @@ const Checkout = ({ orders, onConfirm }) => {
                     </button>
                 </>
             )}
+        </div>
         </div>
     );
 };
