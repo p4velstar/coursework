@@ -1,0 +1,89 @@
+.contact-us {
+    max-width: 450px;
+    margin: 100px auto;
+    padding: 30px 25px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 16px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+}
+
+.contact-us h2 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-transform: capitalize;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    font-size: 14px;
+    margin: 20px 0 8px 0;
+    color: #ddd;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    font-size: 15px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.9);
+    transition: box-shadow 0.3s ease;
+    min-height: 40px;
+    margin-top: 5px;
+    resize: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    box-shadow: 0 0 0 2px #4a23b4;
+    background-color: #fff;
+}
+
+.contact-form textarea {
+    min-height: 100px;
+}
+
+.contact-form button {
+    margin-top: 30px;
+    padding: 14px;
+    font-size: 17px;
+    font-weight: 600;
+    background-color: #4a23b4;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #3b1a8a;
+    transform: scale(1.05);
+}
+
+.thank-you {
+    max-width: 450px;
+    margin: 250px auto;
+    padding: 30px 25px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}

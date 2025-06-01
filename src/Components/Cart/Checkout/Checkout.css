@@ -1,0 +1,51 @@
+.checkout {
+    background: linear-gradient(to bottom right, rgba(73, 35, 180, 1), rgba(232, 120, 207, 1));
+    min-height: 100vh;
+    padding-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.checkout-container {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 500px;
+    color: #fff;
+}
+
+.checkout-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.checkout-summary {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.checkout-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #ffffff;
+    color: #4a23b4;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.checkout-button:hover {
+    background-color: #4a23b4;
+    color: #ffffff;
+    transform: scale(1.03);
+}

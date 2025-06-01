@@ -47,7 +47,7 @@ export default function Header({ user, onLogout, orders}) {
                         {menuItems.map((item, index) => (
                             <li key={index} className="contact">
                                 <a
-                                    href="#"
+                                    href="/contact"
                                     onMouseEnter={() => setHoveredIndex(index)}
                                     onMouseLeave={() => setHoveredIndex(null)}
                                     className={`nav-hover-link ${
@@ -76,7 +76,6 @@ export default function Header({ user, onLogout, orders}) {
                         </>
                     ) : (
                         <>
-                            <span className="header-username">Hello, {user.username}</span>
                             <button onClick={onLogout} className="logout-button">
                                 Logout
                             </button>

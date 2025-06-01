@@ -2,17 +2,12 @@ import PropTypes from 'prop-types';
 import './Cart.css';
 import { useNavigate } from "react-router-dom";
 
-export default function Cart({ orders, onChangeQuantity }) {
+export default function Cart({ orders }) {
     const navigate = useNavigate();
 
     const handleContinueShopping = () => {
-        navigate("/");
+        navigate("/checkout");
     };
-    const handleCheckout = () => {
-        alert(" Thank you for your purchase! Your order has been placed.");
-        onChangeQuantity(null, null, true);
-    };
-
     if (orders.length === 0) {
         return (
             <section className="cart">
@@ -38,29 +33,19 @@ export default function Cart({ orders, onChangeQuantity }) {
                 <ul className="cart-list">
                     {orders.map((order) => (
                         <li key={order.id} className="cart-item">
-                            <img src={order.image} alt={order.title} className="cart-item-image" />
+                            <img src={order.image} alt={order.title} className="cart-item-image"/>
                             <span className="cart-item-title">{order.title}</span>
-
-                            <div className="cart-item-details">
-                                <span>Quantity:</span>
-                                <button onClick={() => onChangeQuantity(order.id, -1)}>-</button>
-                                <span style={{ margin: "0 10px" }}>{order.quantity}</span>
-                                <button onClick={() => onChangeQuantity(order.id, 1)}>+</button>
-                            </div>
-
                             <span>Price: ${(order.price * order.quantity).toFixed(2)}</span>
                         </li>
                     ))}
                 </ul>
 
                 <p className="cart-total">Total: ${totalPrice.toFixed(2)}</p>
-
-                <button className="cart-button" onClick={handleCheckout}>
-                    Checkout
-                </button>
-                <button className="cart-button" onClick={handleContinueShopping}>
-                    Continue Shopping
-                </button>
+                <div className="cart-actions">
+                    <button className="cart-button" onClick={handleContinueShopping}>
+                        Continue Shopping
+                    </button>
+                </div>
             </div>
         </section>
     );

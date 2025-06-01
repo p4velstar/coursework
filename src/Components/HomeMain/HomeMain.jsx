@@ -25,7 +25,7 @@ export default function HomeMain() {
                     Start your programming journey with us. We offer a wide range of courses for beginners and advanced
                     programmers.
                 </motion.p>
-                <button className="home-main-button" onClick={() => navigate("/Registration.jsx")}>
+                <button className="home-main-button" onClick={() => navigate("/registration")}>
                     Get Started
                 </button>
             </div>

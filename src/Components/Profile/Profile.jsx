@@ -27,6 +27,7 @@ export default function Profile({ user, onLogout, onUpdateUser }) {
         setEditing(false);
     };
 
+
     return (
         <div className="profile-container">
             <h1>Profile</h1>
@@ -70,6 +71,19 @@ export default function Profile({ user, onLogout, onUpdateUser }) {
 
                 <button onClick={onLogout} className="btn logout-btn">Logout</button>
             </div>
+            {user.purchasedCourses && user.purchasedCourses.length > 0 && (
+                <div className="purchased-courses">
+                    <h2>Purchased Courses</h2>
+                    <ul>
+                        {user.purchasedCourses.map(course => (
+                            <li key={course.id}>
+                                <a href={`/course/${course.id}`}>{course.title}</a>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            )}
+
         </div>
     );
 }
@@ -78,7 +92,14 @@ Profile.propTypes = {
     user: PropTypes.shape({
         username: PropTypes.string.isRequired,
         email: PropTypes.string,
+        purchasedCourses: PropTypes.arrayOf(
+            PropTypes.shape({
+                id: PropTypes.number.isRequired,
+                title: PropTypes.string.isRequired,
+            })
+        )
     }),
     onLogout: PropTypes.func.isRequired,
     onUpdateUser: PropTypes.func.isRequired,
 };
+

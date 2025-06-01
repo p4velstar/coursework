@@ -8,8 +8,10 @@ import Registration from "./Components/Registration/Registration.jsx";
 import Login from "./Components/Login/Login.jsx";
 import Courses from "./Components/Courses/Courses.jsx";
 import Cart from "./Components/Cart/Cart.jsx";
-import CourseDetail from "./Components/Courses/CourseDetail.jsx";
+import CourseDetail from "./Components/Courses/CourseDetail/CourseDetail.jsx";
 import Profile from "./Components/Profile/Profile.jsx";
+import Checkout from "./Components/Cart/Checkout/Checkout.jsx";
+import ContactUs from "./Components/ContactUs/ContactUs.jsx";
 
 export default function App() {
     const [user, setUser] = useState(() => {
@@ -38,19 +40,12 @@ export default function App() {
     useEffect(() => {
         localStorage.setItem("orders", JSON.stringify(orders));
     }, [orders]);
-    const handleChangeQuantity = (id, delta, clear = false) => {
+    const handleChangeQuantity = (_id, _delta, clear = false) => {
         if (clear) {
             setOrders([]);
-            return;
         }
-        setOrders((prevOrders) =>
-            prevOrders.map((order) =>
-                order.id === id
-                    ? { ...order, quantity: Math.max(order.quantity + delta, 1) }
-                    : order
-            )
-        );
     };
+
 
     const courses = [
         {
@@ -92,14 +87,11 @@ export default function App() {
 
     const handleAddToCart = (course) => {
         setOrders((prevOrders) => {
-            const existingOrder = prevOrders.find((o) => o.id === course.id);
-            if (existingOrder) {
-                return prevOrders.map((o) =>
-                    o.id === course.id ? { ...o, quantity: o.quantity + 1 } : o
-                );
-            } else {
-                return [...prevOrders, { ...course, quantity: 1 }];
+            const exists = prevOrders.some((o) => o.id === course.id);
+            if (exists) {
+                return prevOrders;
             }
+            return [...prevOrders, { ...course, quantity: 1 }];
         });
     };
 
@@ -138,6 +130,14 @@ export default function App() {
                             )
                         }
                     />
+                    <Route
+                        path="/checkout"
+                        element={<Checkout orders={orders} onConfirm={() => {
+                            setUser(prev => ({ ...prev, purchasedCourses: orders }));
+                            setOrders([]);
+                        }} />}
+                    />
+                    <Route path="/contact" element={<ContactUs />} />
                 </Routes>
             </main>
         </BrowserRouter>
