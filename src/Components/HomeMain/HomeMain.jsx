@@ -2,8 +2,8 @@ import './HomeMain.css';
 import 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import pc from '/pc.png';
-import heart from '/heart.png';
+import pc from '/images/pc.png';
+import heart from '/images/heart.png';
 
 export default function HomeMain() {
     const navigate = useNavigate();

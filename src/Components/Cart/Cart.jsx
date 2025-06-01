@@ -8,6 +8,10 @@ export default function Cart({ orders, onChangeQuantity }) {
     const handleContinueShopping = () => {
         navigate("/");
     };
+    const handleCheckout = () => {
+        alert(" Thank you for your purchase! Your order has been placed.");
+        onChangeQuantity(null, null, true);
+    };
 
     if (orders.length === 0) {
         return (
@@ -22,6 +26,10 @@ export default function Cart({ orders, onChangeQuantity }) {
             </section>
         );
     }
+    const totalPrice = orders.reduce(
+        (acc, order) => acc + order.price * order.quantity,
+        0
+    );
 
     return (
         <section className="cart">
@@ -30,13 +38,13 @@ export default function Cart({ orders, onChangeQuantity }) {
                 <ul className="cart-list">
                     {orders.map((order) => (
                         <li key={order.id} className="cart-item">
-                            <img src={order.image} alt={order.title} className="cart-item-image"/>
+                            <img src={order.image} alt={order.title} className="cart-item-image" />
                             <span className="cart-item-title">{order.title}</span>
 
                             <div className="cart-item-details">
                                 <span>Quantity:</span>
                                 <button onClick={() => onChangeQuantity(order.id, -1)}>-</button>
-                                <span style={{margin: "0 10px"}}>{order.quantity}</span>
+                                <span style={{ margin: "0 10px" }}>{order.quantity}</span>
                                 <button onClick={() => onChangeQuantity(order.id, 1)}>+</button>
                             </div>
 
@@ -45,6 +53,11 @@ export default function Cart({ orders, onChangeQuantity }) {
                     ))}
                 </ul>
 
+                <p className="cart-total">Total: ${totalPrice.toFixed(2)}</p>
+
+                <button className="cart-button" onClick={handleCheckout}>
+                    Checkout
+                </button>
                 <button className="cart-button" onClick={handleContinueShopping}>
                     Continue Shopping
                 </button>

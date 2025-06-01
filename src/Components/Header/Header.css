@@ -61,7 +61,8 @@
 .header-registration-link,
 .nav-menu li a,
 .nav-hover-link,
-.courses {
+.courses,
+.logout-button{
     display: inline-block;
     flex-direction: column;
     gap: 8px;
@@ -81,9 +82,20 @@
 .header-registration-link:hover,
 .nav-menu li a:hover,
 .nav-hover-link:hover,
-.courses:hover {
+.courses:hover,
+.logout-button:hover {
     background-color: rgba(255, 255, 255, 0.1);
     color: #ffccff;
+}
+.logout-button {
+    border: none;
+    background-color: transparent;
+}
+
+.logout-button:hover {
+    background-color: #ffccff;
+    color: #4a1a4a;
+    border-color: #ffccff;
 }
 
 .nav-menu-toggle {

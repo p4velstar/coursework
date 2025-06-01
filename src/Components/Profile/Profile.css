@@ -1,0 +1,92 @@
+.profile-container {
+    max-width: 600px;
+    margin: 120px auto 40px;
+    padding: 20px 30px;
+    background: linear-gradient(135deg, #4923b4, #e878cf);
+    border-radius: 12px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 0 15px rgba(232, 120, 207, 0.7);
+}
+
+.profile-container h1 {
+    text-align: center;
+    margin-bottom: 24px;
+    font-weight: 700;
+}
+
+.profile-info label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    font-size: 18px;
+}
+
+.profile-info input {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: none;
+    font-size: 16px;
+    width: 60%;
+}
+
+.profile-info span {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.profile-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.btn {
+    padding: 10px 24px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.edit-btn {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+.edit-btn:hover {
+    background-color: #ffccff;
+    color: #4a1a4a;
+}
+
+.save-btn {
+    background-color: #6ee7b7;
+    color: #064e3b;
+}
+
+.save-btn:hover {
+    background-color: #34d399;
+}
+
+.cancel-btn {
+    background-color: #f87171;
+    color: #7f1d1d;
+}
+
+.cancel-btn:hover {
+    background-color: #ef4444;
+}
+
+.logout-btn {
+    background-color: #a78bfa;
+    color: #4c1d95;
+}
+
+.logout-btn:hover {
+    background-color: #7c3aed;
+    color: white;
+}

@@ -1,12 +1,16 @@
-import { Link, useNavigate } from 'react-router-dom';
-import './Login.css';
+import { useState } from "react";
+import "./Login.css";
+import { Link, useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
 
-export default function Login() {
+export default function Login({ onLogin }) {
     const navigate = useNavigate();
+    const [username, setUsername] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        navigate('/');
+        onLogin(username);
+        navigate("/");
     };
 
     return (
@@ -15,7 +19,14 @@ export default function Login() {
                 <h1 className="login-title">Login</h1>
                 <form className="login-form" onSubmit={handleSubmit}>
                     <label htmlFor="username">Username</label>
-                    <input type="text" id="username" name="username" required />
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        required
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                    />
 
                     <label htmlFor="password">Password</label>
                     <input type="password" id="password" name="password" required />
@@ -24,9 +35,14 @@ export default function Login() {
                         Dont have an account? <Link to="/registration">Register</Link>
                     </p>
 
-                    <button type="submit" className="login-button">Login</button>
+                    <button type="submit" className="login-button">
+                        Login
+                    </button>
                 </form>
             </div>
         </section>
     );
 }
+Login.propTypes = {
+    onLogin: PropTypes.func.isRequired,
+};
