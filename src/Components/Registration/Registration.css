@@ -6,30 +6,30 @@ html, body {
 }
 
 .registration {
-    background: linear-gradient(to bottom right, rgba(73, 35, 180, 1), rgba(232, 120, 207, 1));
-    height: 100vh;
+    height: 80vh;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 60px;
+    padding-top: 40px;
 }
+
 .registration-container {
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
-    border-radius: 20px;
-    padding: 40px 30px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-radius: 16px;
+    padding: 30px 24px;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.25);
     width: 90%;
     max-width: 400px;
 }
 
 .registration-title {
     text-align: center;
-    font-size: 36px;
+    font-size: 28px;
     font-weight: 600;
     color: #ffffff;
-    margin-bottom: 30px;
+    margin-bottom: 24px;
 }
 
 .registration-form {
@@ -38,36 +38,38 @@ html, body {
 }
 
 .registration-form label {
-    font-size: 14px;
+    font-size: 13px;
     color: #ffffff;
-    margin-bottom: 5px;
-    margin-top: 15px;
+    margin-bottom: 4px;
+    margin-top: 12px;
 }
 
-.registration-form input {
-    padding: 12px;
-    font-size: 14px;
-    border-radius: 8px;
+.registration-form input,
+.registration-form select {
+    padding: 10px;
+    font-size: 13px;
+    border-radius: 7px;
     border: none;
     outline: none;
     background-color: rgba(255, 255, 255, 0.9);
     transition: all 0.3s ease;
 }
 
-.registration-form input:focus {
+.registration-form input:focus,
+.registration-form select:focus {
     background-color: #fff;
     box-shadow: 0 0 0 2px #4a23b4;
 }
 
 .registration-button {
-    margin-top: 25px;
-    padding: 12px;
-    font-size: 16px;
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 15px;
     font-weight: 600;
     background-color: #ffffff;
     color: #4a23b4;
     border: none;
-    border-radius: 8px;
+    border-radius: 7px;
     cursor: pointer;
     transition: 0.3s ease;
 }
@@ -75,5 +77,12 @@ html, body {
 .registration-button:hover {
     background-color: #4a23b4;
     color: #ffffff;
-    transform: scale(1.03);
+    transform: scale(1.02);
+}
+
+.login-link {
+    margin-top: 12px;
+    font-size: 13px;
+    color: #fff;
+    text-align: center;
 }
