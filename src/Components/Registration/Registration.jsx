@@ -6,7 +6,7 @@ export default function Registration() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        navigate('/');
+        navigate('/email-confirmation');
     };
     return (
         <section className="registration">

@@ -12,6 +12,7 @@ import CourseDetail from "./Components/Courses/CourseDetail/CourseDetail.jsx";
 import Profile from "./Components/Profile/Profile.jsx";
 import Checkout from "./Components/Cart/Checkout/Checkout.jsx";
 import ContactUs from "./Components/ContactUs/ContactUs.jsx";
+import EmailConfirmation from "./Components/EmailConfirmation/EmainConfirmation.jsx";
 
 export default function App() {
     const [user, setUser] = useState(() => {
@@ -45,7 +46,6 @@ export default function App() {
             setOrders([]);
         }
     };
-
 
     const courses = [
         {
@@ -138,6 +138,7 @@ export default function App() {
                         }} />}
                     />
                     <Route path="/contact" element={<ContactUs />} />
+                    <Route path="/email-confirmation" element={<EmailConfirmation />} />
                 </Routes>
             </main>
         </BrowserRouter>
